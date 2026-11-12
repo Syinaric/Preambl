@@ -1,0 +1,72 @@
+.spec {
+  border: 1px solid var(--color-line);
+  background: var(--color-bg1);
+}
+.spec__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--color-line-hi);
+  box-shadow: 0 1px 0 rgba(220, 42, 82, 0.25);
+}
+.spec__title {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-accent-hi);
+  text-shadow: 0 0 12px rgba(220, 42, 82, 0.6);
+}
+.spec__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+}
+.spec__table th {
+  text-align: left;
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-mute);
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--color-line);
+}
+.spec__table td {
+  padding: 13px 20px;
+  border-bottom: 1px solid var(--color-line);
+  color: var(--color-text-dim);
+  vertical-align: top;
+}
+.spec__table tr:last-child td {
+  border-bottom: 0;
+}
+.spec__table td:first-child {
+  color: var(--color-text);
+  width: 32%;
+}
+.spec__value {
+  color: var(--color-silver-hi);
+}
+.is-tbd .spec__value {
+  color: var(--color-amber);
+}
+.spec__note-col {
+  color: var(--color-text-mute);
+}
+.spec__table tbody tr:hover td {
+  background: rgba(220, 42, 82, 0.05);
+}
+@media (max-width: 600px) {
+  .spec__note-col {
+    display: none;
+  }
+  .spec__table td,
+  .spec__table th {
+    padding-inline: 14px;
+  }
+}

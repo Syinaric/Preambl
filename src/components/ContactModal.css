@@ -1,0 +1,111 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+.modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 2, 4, 0.78);
+  backdrop-filter: blur(6px);
+  animation: modal-fade var(--dur-base) var(--ease-power-on);
+}
+.modal__panel {
+  position: relative;
+  width: min(560px, 100%);
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+  background: var(--color-bg1);
+  border: 1px solid var(--color-line-hi);
+  padding: clamp(20px, 4vw, 36px);
+  box-shadow:
+    0 0 0 1px rgba(220, 42, 82, 0.08) inset,
+    0 0 60px rgba(220, 42, 82, 0.15);
+  animation: modal-on var(--dur-base) var(--ease-power-on);
+}
+.modal__corner {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--color-amber);
+}
+.modal__corner.tl { top: -1px; left: -1px; border-right: 0; border-bottom: 0; }
+.modal__corner.br { bottom: -1px; right: -1px; border-left: 0; border-top: 0; }
+.modal__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.modal__close:hover {
+  color: var(--color-text);
+}
+.modal__form,
+.modal__sent {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.field input,
+.field select,
+.field textarea {
+  font: inherit;
+  font-size: 15px;
+  color: var(--color-text);
+  background: var(--color-bg0);
+  border: 1px solid var(--color-line);
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color var(--dur-fast), box-shadow var(--dur-fast);
+  border-radius: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 14px rgba(220, 42, 82, 0.25);
+}
+.field textarea {
+  resize: vertical;
+}
+.modal__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+@keyframes modal-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes modal-on {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+.modal__email {
+  font-family: var(--font-mono);
+  font-size: clamp(15px, 1.6vw, 20px);
+  letter-spacing: 0.04em;
+  color: var(--color-silver-hi);
+  padding: 14px 18px;
+  border: 1px solid var(--color-line-hi);
+  background: var(--color-bg0);
+  align-self: flex-start;
+  word-break: break-all;
+  transition: border-color var(--dur-fast), box-shadow var(--dur-base);
+}
+.modal__email:hover {
+  border-color: var(--color-amber);
+  box-shadow: 0 0 18px rgba(255, 176, 58, 0.25);
+}

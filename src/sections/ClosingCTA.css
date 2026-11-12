@@ -1,0 +1,58 @@
+.cta {
+  overflow: hidden;
+  text-align: center;
+}
+.cta__glow {
+  position: absolute;
+  left: 50%;
+  bottom: -40%;
+  width: 90vw;
+  height: 80%;
+  transform: translateX(-50%);
+  background: radial-gradient(50% 50% at 50% 50%, rgba(220, 42, 82, 0.22), rgba(255, 176, 58, 0.04) 50%, transparent 70%);
+  pointer-events: none;
+  filter: blur(10px);
+}
+.cta__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+.cta__dim {
+  color: var(--color-text-dim);
+  font-weight: 300;
+}
+.cta__actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.list li {
+  position: relative;
+  padding-left: 22px;
+}
+.list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 8px;
+  height: 1px;
+  background: var(--color-accent);
+  box-shadow: 0 0 6px var(--color-accent);
+}
+.list b {
+  font-weight: 500;
+  color: var(--color-text);
+}

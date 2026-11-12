@@ -1,0 +1,39 @@
+.preloader {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background: var(--color-bg0);
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+.preloader__inner {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: min(360px, 70vw);
+}
+.preloader__track {
+  flex: 1;
+  height: 1px;
+  background: var(--color-line);
+  position: relative;
+  overflow: visible;
+}
+.preloader__bar {
+  position: absolute;
+  inset: 0;
+  transform-origin: left center;
+  transform: scaleX(0);
+  background: linear-gradient(90deg, var(--color-accent), var(--color-amber));
+  box-shadow: 0 0 10px rgba(220, 42, 82, 0.7);
+}
+.preloader__pct {
+  color: var(--color-text-dim);
+  font-variant-numeric: tabular-nums;
+  min-width: 4ch;
+  text-align: right;
+}
+.preloader__unit {
+  color: var(--color-text-mute);
+}

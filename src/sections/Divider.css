@@ -1,0 +1,10 @@
+.divider {
+  display: flex;
+  justify-content: center;
+  height: 140px;
+  margin-block: -24px;
+  pointer-events: none;
+}
+.divider svg {
+  overflow: visible;
+}

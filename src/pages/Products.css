@@ -1,0 +1,95 @@
+.phero {
+  position: relative;
+  padding-top: 72px;
+}
+.phero__scene {
+  position: relative;
+  height: min(72vh, 720px);
+  min-height: 420px;
+  border-bottom: 1px solid var(--color-line);
+  cursor: grab;
+}
+.phero__scene:active {
+  cursor: grabbing;
+}
+.phero__hint {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.phero__hud {
+  position: absolute;
+  pointer-events: none;
+}
+.phero__hud--tl {
+  top: 20px;
+  left: var(--space-gutter);
+}
+.phero__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 56px;
+  padding-bottom: 24px;
+  max-width: 900px;
+}
+.phero__name {
+  font-size: clamp(36px, 6vw, 88px);
+}
+.phero__actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.usecases {
+  border: 1px solid var(--color-line);
+  background: var(--color-bg1);
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.usecases ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.usecases li {
+  padding: 14px 0;
+  border-top: 1px solid var(--color-line);
+  color: var(--color-text-dim);
+  font-weight: 300;
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+}
+.usecases li::before {
+  content: '▸';
+  color: var(--color-amber);
+  font-size: 10px;
+}
+
+.pgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+.pcard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px;
+  border: 1px solid var(--color-line);
+  background: var(--color-bg1);
+  transition: border-color var(--dur-fast), box-shadow var(--dur-base);
+}
+.pcard:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 24px rgba(220, 42, 82, 0.2);
+}
