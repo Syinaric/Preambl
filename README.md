@@ -2,6 +2,8 @@
 
 Vite + React + TypeScript. three.js via @react-three/fiber, drei and postprocessing. GSAP ScrollTrigger + Lenis for the scroll-scrubbed hero.
 
+## Local development
+
 ```bash
 npm install
 npm run dev        # http://localhost:5173
